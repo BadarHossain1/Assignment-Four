@@ -57,7 +57,7 @@ function deleteInvalids(array) {
     return password_structure;
     
  }
- 
+
 
 
  function monthlySavings(arr , livingCost) {
@@ -87,5 +87,4 @@ function deleteInvalids(array) {
         
     }
 
-    console.log(monthlySavings(100, [ 900 , 2700 , 3400]))
 
