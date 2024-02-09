@@ -6,15 +6,17 @@ function calculateMoney(ticketSale) {
     return remainingMoney;
 }
 
+
+
 function checkName(name) {
     if(typeof name!== 'string'){
         return "invalid";
     }
     const nameLower = name.toLowerCase();
     const words = nameLower.trim().split('');
-    const LastLetter = words[words.length-1];
+    const Lastletter = words[words.length-1];
 
-    if(LastLetter == 'a' || LastLetter == 'y' || LastLetter == 'i' || LastLetter == 'e' || LastLetter == 'o' || LastLetter == 'u' || LastLetter == 'w'){
+    if(Lastletter == 'a' || Lastletter == 'y' || Lastletter == 'i' || Lastletter == 'e' || Lastletter == 'o' || Lastletter == 'u' || Lastletter == 'w'){
         return "Good Name";
      }
     else{
@@ -22,6 +24,7 @@ function checkName(name) {
     }
 
 }
+
 
 
 function deleteInvalids(array) {
@@ -44,7 +47,16 @@ function deleteInvalids(array) {
   }
 
 
+
+
  function password(obj) {
+    if(!(obj.hasOwnProperty('name') && obj.hasOwnProperty('birthYear') && obj.hasOwnProperty('siteName'))){
+        return "invalid";
+    }
+    const Length = String(obj.birthYear);
+    if(Length.length<4){
+        return "invalid";
+    }
     const length = obj.siteName.length;
 
     const letters = obj.siteName.split('');
@@ -60,6 +72,7 @@ function deleteInvalids(array) {
 
 
 
+
  function monthlySavings(arr , livingCost) {
     if(!Array.isArray(arr)){
         return "invalid input";
@@ -67,8 +80,8 @@ function deleteInvalids(array) {
     let sum = 0;
         for(let i = 0;i<arr.length;i++){
             if(arr[i]>=3000){
-                const taxAmount = arr[i] * 0.2;
-                arr[i] = arr[i] - taxAmount ;
+                const taxCut = arr[i] * 0.2;
+                arr[i] = arr[i] - taxCut ;
                 
                 
             }
